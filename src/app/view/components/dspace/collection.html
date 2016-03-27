@@ -1,0 +1,16 @@
+﻿<div class="container" *ngIf="collection">
+
+    <div class="col-md-4">
+        <context [context]="collection"></context>
+    </div>
+
+    <div class="col-md-8">
+        <tree [directories]="collection.items"></tree>
+        <div class="jumbotron">
+            <div class="container">
+
+            </div>
+        </div>
+    </div>
+
+</div>

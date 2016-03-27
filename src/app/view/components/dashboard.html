@@ -1,0 +1,8 @@
+﻿<div class="container">
+    <div class="col-md-4">
+        <context [context]="dashboard"></context>
+    </div>
+    <div class="col-md-8">
+        <tree [directories]="dspace.directory | async"></tree>
+    </div>
+</div>

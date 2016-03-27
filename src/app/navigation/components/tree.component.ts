@@ -24,8 +24,7 @@ import {ListComponent} from './list.component';
                         
                         <span *ngIf="directory.type == 'collection'" class="badge">{{ directory.numberItems }}</span>
 
-                        
-                        <div *ngIf="directory.expanded && directory.type == 'community'">
+                        <div *ngIf="directory.expanded && directory.type == 'community'">                            
                             <tree [directories]="directory.subcommunities.concat(directory.collections)"></tree>
                         </div>
 

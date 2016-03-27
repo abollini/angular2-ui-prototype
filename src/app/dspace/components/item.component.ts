@@ -7,7 +7,7 @@ import {DSpaceService} from '../dspace.service';
 
 import {BreadcrumbService} from '../../navigation/breadcrumb.service';
 
-import {ContextComponent} from '../../navigation/context.component';
+import {ContextComponent} from '../../navigation/components/context.component';
 
 @Component({
     selector: 'item',
@@ -45,7 +45,6 @@ import {ContextComponent} from '../../navigation/context.component';
                             </table>
                         </div>
                     </div>
-
 
                 </div>
               `

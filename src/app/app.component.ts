@@ -1,7 +1,7 @@
 ﻿import {Component} from 'angular2/core';
 import {ROUTER_DIRECTIVES, RouteConfig} from 'angular2/router';
 
-import {BreadcrumbComponent} from './navigation/breadcrumb.component';
+import {BreadcrumbComponent} from './navigation/components/breadcrumb.component';
 
 import {HomeComponent} from './home.component';
 import {LoginComponent} from './login.component';
@@ -17,7 +17,6 @@ import {ItemComponent} from './dspace/components/item.component';
 @Component({
     selector: 'dspace',
     directives: [ROUTER_DIRECTIVES, BreadcrumbComponent],
-    styles: [],
     template: `
                 <nav class="navbar navbar-inverse">
                     <div class="container-fluid">

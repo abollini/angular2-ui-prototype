@@ -5,8 +5,8 @@ import {DSpaceDirectory} from '../dspace.directory';
 
 import {BreadcrumbService} from '../../navigation/breadcrumb.service';
 
-import {TreeComponent} from '../../navigation/tree.component';
-import {ContextComponent} from '../../navigation/context.component';
+import {TreeComponent} from '../../navigation/components/tree.component';
+import {ContextComponent} from '../../navigation/components/context.component';
 
 @Component({
     selector: 'collection',

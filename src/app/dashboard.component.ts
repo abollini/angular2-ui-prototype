@@ -3,8 +3,8 @@ import {ROUTER_DIRECTIVES, Location, RouteConfig} from 'angular2/router';
 
 import {DSpaceDirectory} from './dspace/dspace.directory';
 
-import {TreeComponent} from './navigation/tree.component';
-import {ContextComponent} from './navigation/context.component';
+import {TreeComponent} from './navigation/components/tree.component';
+import {ContextComponent} from './navigation/components/context.component';
 import {BreadcrumbService} from './navigation/breadcrumb.service';
 
 @Component({

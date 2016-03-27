@@ -84,7 +84,7 @@ app.set('views', __dirname + '/app/view');
 app.set('view engine', 'html');
 
 // Static Resources
-app.use(express.static(root, { index: false })); 
+app.use(express.static(root, { index: false }));
 
 // Port
 app.set('port', PORT);
@@ -109,7 +109,7 @@ function ngApp(req, res) {
             DSpaceStore,
             HttpService,
             WebSocketService
-        ],
+        ],        
         preboot: {
             //listen: any,
             replay: 'hydrate',
