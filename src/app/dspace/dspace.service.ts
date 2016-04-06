@@ -1,6 +1,7 @@
 ﻿import {Injectable} from 'angular2/core';
 
 import {HttpService} from '../utilities/http.service';
+import {RequestOptions, Request, RequestMethod, URLSearchParams} from 'angular2/http';
 
 /**
  * Injectable service to provide an interface with the DSpace REST API 
@@ -50,9 +51,13 @@ export class DSpaceService {
     /**
      * Method to fetch top communities for navigation purposes.
      */
-    fetchTopCommunities() {
+    fetchTopCommunities(limit, offset) {
+        var params = new URLSearchParams();
+        params.append("limit", limit);
+        params.append("offset", offset);
         return this.httpService.get({
-            url: this.url + this.REST + '/communities/top-communities'
+            url: this.url + this.REST + '/communities/top-communities',
+            search: params
         });
     }
 

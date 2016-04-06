@@ -27,7 +27,8 @@ export class DSpaceDirectory {
             context: Object,
             observer: Observer<Object>,
             loading: boolean,
-            ready: boolean
+            ready: boolean,
+            complete: boolean
         }
     };
 
@@ -53,7 +54,8 @@ export class DSpaceDirectory {
                 context: new Array<Object>(),
                 observer: null,
                 loading: false,
-                ready: false
+                ready: false,
+                complete: false
             }
         };
         this.directory = new Observable<Object>(observer => this.store.directory.observer = observer).share();        
@@ -73,9 +75,10 @@ export class DSpaceDirectory {
         else {
             if (!this.store.directory.loading) {
                 this.store.directory.loading = true;
-                this.dspaceService.fetchTopCommunities().subscribe(topCommunities => {
+                this.dspaceService.fetchTopCommunities(11,0).subscribe(topCommunities => {
                     this.store.directory.context = this.prepare(null, topCommunities);
                     this.store.directory.observer.next(this.store.directory.context);
+                    this.store.directory.complete = topCommunities.lenght != 11;
                 },
                 error => {
                     console.error('Error: ' + JSON.stringify(error, null, 4));
@@ -83,7 +86,7 @@ export class DSpaceDirectory {
                 () => {
                     this.store.directory.ready = true;
                     this.store.directory.loading = false;
-                    console.log('finished fetching top communities');
+                    console.log('finished fetching top communities, complete '+this.store.directory.complete);
                 });
             }
         }
